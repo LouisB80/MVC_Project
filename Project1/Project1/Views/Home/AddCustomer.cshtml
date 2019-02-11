@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AddCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddCustomer</h2>
+<form action="/AddCustomer" method="post">
+    <div>
+        <label for="LastName">Nom :</label>
+        <input type="text" id="LastName" name="user_LastName">
+    </div>
+    <div>
+        <label for="FirstName">Prénom :</label>
+        <input type="text" id="FirstName" name="user_FirstName">
+    </div>
+    <div>
+        <label for="Mail">Mail :</label>
+        <input type="email" id="Mail" name="user_mail">
+    </div>
+    <div>
+        <label for="PhoneNumber">Tél :</label>
+        <input type="text" id="PhoneNumber" name="user_PhoneNumber">
+    </div>
+    <div>
+        <label for="Budget">Budget :</label>
+        <input type="number" id="Budget" name="user_Budget">
+    </div>
+    <div class="button">
+        <button type="submit">Valider</button>
+    </div>
+</form>

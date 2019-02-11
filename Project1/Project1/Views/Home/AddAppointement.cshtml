@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "AddAppointement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddAppointement</h2>
+
+<form action="/AddAppointement" method="post">
+    <div>
+        <label for="DateTime">Date rdv:</label>
+        <input type="datetime-local" id="date" name="DateTime">
+    </div>
+    <div class="button">
+        <button type="submit">Valider</button>
+    </div>
+</form>

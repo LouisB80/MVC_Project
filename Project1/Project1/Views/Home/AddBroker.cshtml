@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "AddBroker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nouveau courtier</h2>
+<form action="/AddBroker" method="post">
+    <div>
+        <label for="LastName">Nom :</label>
+        <input type="text" id="LastName" name="user_LastName">
+    </div>
+    <div>
+        <label for="FirstName">Prénom :</label>
+        <input type="text" id="FirstName" name="user_FirstName">
+    </div>
+    <div>
+        <label for="Mail">Mail :</label>
+        <input type="email" id="Mail" name="user_mail">
+    </div>
+    <div>
+        <label for="PhoneNumber">Tél :</label>
+        <input type="text" id="PhoneNumber" name="user_PhoneNumber">
+    </div>
+    <div class="button">
+        <button type="submit">Valider</button>
+    </div>
+</form>
