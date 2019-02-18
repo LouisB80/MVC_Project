@@ -1,0 +1,48 @@
+﻿@model Project1.Models.Customer
+@{
+    ViewBag.Title = "Edit Customers";
+    Layout = null;
+}
+
+<h2 class="text-center">Modifier Client</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName)
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName)
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Mail)
+                    @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Mail)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PhoneNumber)
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Budget)
+                    @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Budget)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject)
+                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Subject)
+                </div>
+                <input type="submit" name="Modifier" class="btn btn-primary">
+            }
+        </div>
+    </div>
+</div>

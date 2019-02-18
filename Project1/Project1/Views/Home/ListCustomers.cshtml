@@ -1,8 +1,34 @@
-﻿
+﻿@model List<Project1.Models.Customer>
 @{
     ViewBag.Title = "ListCustomers";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var url = HttpContext.Current.Request.Url.LocalPath;
+    var page = url.Split('/').Last();
 }
 
 <h2>ListCustomers</h2>
 
+<table style="width: 100%">
+    <tr>
+        <td>LastName</td>
+        <td>FirstName</td>
+        <td>Mail</td>
+        <td>PhoneNumber</td>
+        <td>Budget</td>
+        <td>Subject</td>
+        <td>Edit Line</td>
+        <td>Delete Line</td>
+    </tr>
+    @foreach (var customer in Model)
+    {
+    <tr>
+        <td>@customer.LastName</td>
+        <td>@customer.FirstName</td>
+        <td>@customer.Mail</td>
+        <td>@customer.PhoneNumber</td>
+        <td>@customer.Budget</td>
+        <td>@customer.Subject</td>
+        <td>@Html.ActionLink("Edit", "EditCustomers", new { id = customer.CustomerID, @class = "nav-link" + (page.Equals("EditCustomers") || String.IsNullOrEmpty(@page) ? " active" : "") })</td>       
+    </tr>
+    }
+</table>

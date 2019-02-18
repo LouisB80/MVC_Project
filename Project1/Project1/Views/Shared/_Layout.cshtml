@@ -1,6 +1,8 @@
 ﻿@using System.Web.Optimization
 @{
     Layout = null;
+    var url = HttpContext.Current.Request.Url.LocalPath;
+    var page = url.Split('/').Last();
 }
 <!DOCTYPE html>
 <html>
@@ -15,12 +17,32 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="HomePage">Home</a>
-        <a class="navbar-brand" href="AddCustomer">AddCustomer</a>
-        <a class="navbar-brand" href="AddBroker">AddBroker</a>
-        <a class="navbar-brand" href="AddAppointement">AddAppointement</a>
-        <a class="navbar-brand" href="ListBrokers">ListBrokers</a>
-        <a class="navbar-brand" href="ListCustomers">ListCustomers</a>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="HomePage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AddCustomer">AddCustomer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AddBroker">AddBroker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AddAppointement">AddAppointement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ListBrokers">ListBrokers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ListCustomers">ListCustomers</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     @RenderBody()
     @Scripts.Render("~/Scripts")

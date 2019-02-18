@@ -179,7 +179,9 @@
     <Content Include="Views\Home\AddAppointement.cshtml" />
     <Content Include="Views\Home\ListBrokers.cshtml" />
     <Content Include="Views\Home\ListCustomers.cshtml" />
-    <Content Include="Views\Home\ProfilBrokers.cshtml" />
+    <Content Include="Views\Home\ProfilBroker.cshtml" />
+    <Content Include="Views\Home\EditCustomer.cshtml" />
+    <Content Include="Views\Home\EditBroker.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />

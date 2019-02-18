@@ -1,8 +1,31 @@
-﻿
+﻿@model List<Project1.Models.Broker>
 @{
     ViewBag.Title = "ListBrokers";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var url = HttpContext.Current.Request.Url.LocalPath;
+    var page = url.Split('/').Last();
 }
 
 <h2>ListBrokers</h2>
 
+@Html.ActionLink("Ajouter un courtier", "AddBroker", "Home")
+<table style="width:100%">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Numéro de téléphone</th>
+        <th>Adresse Mail</th>
+    </tr>
+    @foreach (var broker in Model)
+    {
+    <tr>
+        <td>@broker.LastName</td>
+        <td>@broker.FirstName</td>
+        <td>@broker.PhoneNumber</td>
+        <td>@broker.Mail</td>
+        @*<td>@Html.ActionLink("Edit", "EditBroker", new { id = broker.BrokerID, @class = "nav-link" + (page.Equals("EditCustomers") || String.IsNullOrEmpty(@page) ? " active" : "") })</td>*@
+        <td>@Html.ActionLink("Afficher profil", "ProfilBroker","Home", new { id = broker.BrokerID },new {@class= "btn btn-primary" })</td>
+        @*<td>@Html.ActionLink("Supprimer", "DeleteBroker", new { id = broker.BrokerID }, new { @class = "delete" })</td>*@
+    </tr>
+    }
+    </table>
