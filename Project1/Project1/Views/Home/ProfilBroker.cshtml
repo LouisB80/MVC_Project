@@ -1,9 +1,9 @@
 ﻿@model Project1.Models.Broker
 @{
-    ViewBag.Title = "ProfilBrokers";
+    ViewBag.Title = "ProfilBroker";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Profil de @Html.DisplayFor(model => model.FirstName)</h2>
-<p>@Html.ActionLink("Modifier","EditBroker","Home", new {id = @Html.DisplayFor(model => model.BrokerID) }, new {@class = "btn btn-primary" })</p>
+<p>@Html.ActionLink("Modifier", "EditBroker", "Home", new { id = @Html.DisplayFor(model => model.BrokerID) }, new { @class = "btn btn-primary" })</p>
 <p>@Html.ActionLink("Supprimer", "DeleteBroker", "Home", new { id = @Html.DisplayFor(model => model.BrokerID) }, new { @class = "btn btn-primary" })</p>
